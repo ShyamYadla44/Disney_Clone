@@ -12,7 +12,6 @@ body{
     font-family: roboto, sans-serif;
 }
 .navbar { 
-    width:100%;
     height:80px;
     position:fixed;
     margin-bottom: 0;
@@ -21,20 +20,37 @@ body{
     z-index:9 !important;
     display:flex;
     align-items: center;
-    padding:4%;
+    padding:2%;
     background-color: #0c111b !important;
+   
+}
+.left-container{
+    display: flex;
+    align-items: center;
+    justify-content: first baseline;
+}
+.hamburger{
+    height:21px;
+    width:22px;
+    margin:20px;
+    background:transparent;
+    opacity:0.6;
 }
 
 .logo{
-    height:70px;
+    height:46px;
+    padding-bottom: 10px;
+}
+.hamburger:hover, .logo:hover{
+    cursor: pointer;
 }
 .nav-links{
     margin-top:10px;
+    font-size: 16px;
     display:flex;
     /* removes list style bullets */
     list-style: none;
 }
-
 
 .nav-items a{
     text-decoration: none !important;
@@ -47,24 +63,40 @@ body{
     color:#fff !important;
     opacity:0.8;
 }
-/* CSS trick to align element on the right side  */
-.right-container{
+/* CSS trick to align element on the right side 
     display:block;
-    margin-left: auto;
+    margin-left:auto; */
+.right-container{
+    display:flex;
+    align-items: center;  
+    margin-left:auto;  
 }
 
+.search-container{
+    display:flex;
+    border-bottom:1px solid  #fff;
+    background:transparent;
+    margin-right: 10px;
+}
+.search-container:focus{
+    border-bottom:1px solid  #1f80e0;
+}
 .search-box{
     border:none;
-    border-bottom:1px solid #fff;
+    /* border-bottom:1px solid #fff; */
     background:transparent;
     text-transform: capitalize;
     font-weight: 500;
-    color:#fff;
+    color:white;
     height:30px;
     font-size: 16px;
     outline: none;
     width:250px;
     transition:0.5s;
+}
+.search-icon{
+    height:16px;
+    margin-top:8px ;
 }
 .search-box:focus{
     width:400px;
@@ -93,6 +125,11 @@ body{
     color:#fff;
     font-weight: 500;
     text-transform: uppercase;
+    
+}
+
+.login:hover{
+    color:white;
     opacity:0.9;
 }
 /* To make an image center
@@ -101,12 +138,49 @@ body{
     top:50%;
     transform:translate(-50%,-50%);
 */
+.slide-container{
+    display: flex;
+    width:100%;
+}
+.prev-button,.next-button{
+    position:absolute;
+    top:0;
+    width:3%;
+    height:50%;
+    z-index:2;
+    border:none;
+    cursor: pointer;
+    outline:none;
+}
+.prev-button{
+    left:0;
+    background: linear-gradient(to bottom,rgba(4,8,15,0), #0c111b00);
+}
+.next-button{
+    right:0;
+    background: linear-gradient(to bottom,rgba(4,8,15,0), #0c111b00);
+}
+.prev-button img,.next-button img{
+    width:25px;
+    height:30px;
+    opacity:0;
+}
+.prev-button:hover img,.next-button:hover img{
+    opacity:1;
+    cursor: pointer;
+  
+}
+
 .c-container{
     position:relative;
+    min-width:100%;
     width:100%;
     height:450px;
-    margin-top:-25px !important;
+    margin-top:-45px !important;
     padding:20px 0;
+    border-radius: 5px;
+    overflow: hidden;
+    /* display:flex; */
     /* Overflow-x to hide sliders overflow */
     /* overflow-x: hidden; */
   
@@ -115,19 +189,49 @@ body{
     /* use display flex, so each slide will be side by side */
     display:flex;
     width:92%;
-    height:100%;
+    height: 100%;
     position: relative;
     margin: auto;
     background-color: #000;
     overflow: hidden;
+    border-radius: 15px;
     /* So in margin: 0 auto, the top/bottom margin is 0, and the left/right margin is auto, */
 }
-
-.slide{
-    margin-left: auto;
-    height:100%;
-
+.slider{
+    height:450px;
+    width:100%;
+    position: relative;
 }
+
+.slide-content{
+    width:30%;
+    height:100%;
+    padding:20px;
+    padding-top: 30px;
+    display:inline-block
+}
+.slide-img{
+    height:100%;
+    width:69%;
+    display:inline-block;
+}
+.slide-img img{
+    height:100%;
+    width: 100%;
+}
+.name1{
+    color:#fff;
+    font-size: 30px;
+    text-transform: capitalize;
+}
+.description1{
+    color:#fff;
+    font-size: 16px;
+    text-transform: capitalize;
+    /* background: linear-gradient(to bottom,rgba(4,8,15,0), #192133 90%); */
+}
+
+
 /* Movie Cards */
 .video-cards-container{
     position: relative;
@@ -192,7 +296,7 @@ body{
 }
 .card-container{
     position:relative;
-    width:100%;
+    width:94%;
     padding-left: 10px;
     height:220px;
     display:flex;
@@ -211,8 +315,8 @@ body{
 
 .card{
     position:relative;
-    min-width:145px;
-    width:145px;
+    min-width:138px;
+    width:138px;
     height:200px;
     border-radius: 5px;
     overflow: hidden;
@@ -356,5 +460,4 @@ body{
 .pre-button:hover img,.nxt-button:hover img{
     opacity:1;
     cursor: pointer;
-  
 }
